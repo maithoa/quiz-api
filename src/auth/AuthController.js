@@ -12,7 +12,8 @@ var VerifyToken = require('./VerifyToken');
 
 router.post('/register', function(req, res) {
   //check if user is existing before creating
-  User.findOne({ email: req.body.email }, function (err, user) { 
+  var newEmail = req.body.email;
+  User.findOne({ email: newEmail.toLowerCase() }, function (err, user) { 
       if (user) {
         userIsExisting = true;
         return res.status(500).send("User with same email is already existing");
@@ -47,7 +48,9 @@ router.get('/me', VerifyToken, function(req, res, next) {
 });
 
 router.post('/login', function(req, res) {
-  User.findOne({ email: req.body.email }, function (err, user) {
+  var userEmail = req.body.email;
+
+  User.findOne({ email: userEmail.toLowerCase()}, function (err, user) {
     if (err) return res.status(500).send('Error on the server.');
     if (!user) return res.status(404).send('No user found.');
     var passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
