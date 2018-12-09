@@ -5,6 +5,10 @@ This is a simple quiz API for use in assignments and technical interviews.
 
 You can try it out yourself [here][deploy]!
 
+Authentication REST API with JWT is implemented base on the artile below
+https://medium.freecodecamp.org/securing-node-js-restful-apis-with-json-web-tokens-9f811a92bb52
+
+
 ## API
 
 The package exposes a REST API with two separate endpoints:
