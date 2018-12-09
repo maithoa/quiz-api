@@ -4,6 +4,14 @@ cors = require("cors");
 const app = express();
 app.use(cors());
 
+var db = require('./db');
+var AuthController = require('./auth/AuthController');
+var QuestionController = require('./question/QuestionController');
+var UserController = require('./user/UserController')
+app.use('/api/auth', AuthController);
+app.use('/api/quiz', QuestionController);
+app.use('/api/user',UserController);
+
 const questions = [
   {
     id: 1,
