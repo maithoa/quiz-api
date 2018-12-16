@@ -1,13 +1,17 @@
 # Quiz API
-Forked from https://github.com/futurice/quiz-api 
+
+Forked from https://github.com/futurice/quiz-api
 
 This is a simple quiz API for use in assignments and technical interviews.
 
 You can try out original version[here][deploy]!
 
-Authentication REST API with JWT is implemented base on the artile : 
-https://medium.freecodecamp.org/securing-node-js-restful-apis-with-json-web-tokens-9f811a92bb52
+You can try out current version[here][v2_deploy]!
 
+## Authentication REST API with JWT is implemented base on the artile :
+
+https://medium.freecodecamp.org/securing-node-js-restful-apis-with-json-web-tokens-9f811a92bb52
+ß
 
 ## API
 
@@ -15,17 +19,17 @@ The package exposes a REST API with two separate endpoints:
 
 - `/questsions` - returns a list of questions on the format:
 
-    ```json
-    [
-      {
-        "id": 2,
-        "question": "Which actor played Richard III in the 1995 British film drama of the same title?",
-        "choices": ["Ian McKellen", "Partrick Stewart", "Elijah Wood"]
-      }
-    ]
-    ```
+  ```json
+  [
+    {
+      "id": 2,
+      "question": "Which actor played Richard III in the 1995 British film drama of the same title?",
+      "choices": ["Ian McKellen", "Partrick Stewart", "Elijah Wood"]
+    }
+  ]
+  ```
 
-    Some questions come with optional choices and some don't.
+  Some questions come with optional choices and some don't.
 
 - `/answer/:id` - returns the answer to a given question
 
@@ -47,3 +51,4 @@ now
 ```
 
 [deploy]: https://futu-quiz-api.now.sh/
+[v2_deploy]: https://quiz-api-v2.herokuapp.com/
